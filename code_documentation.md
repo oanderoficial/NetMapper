@@ -137,3 +137,36 @@ def parar_escaneamento():
     escaneamento_em_andamento = False
     return "🛑 Escaneamento interrompido pelo usuário!"
 ```
+
+## Frontend
+
+```python
+estilo_css = """
+footer {display: none !important;}
+
+/* Rodapé fixo personalizado */
+.custom-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Estiliza o link do GitHub */
+.custom-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.custom-footer a:hover {
+    text-decoration: underline;
+}
+""
+```
