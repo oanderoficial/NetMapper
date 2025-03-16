@@ -42,8 +42,16 @@ Gerando um mapa gráfico da rede e exibindo visualmente as conexões identificad
 ### NetMapper traz o melhor dos dois mundos:
 ### 🚀 O poder do Nmap + a facilidade de um dashboard interativo! 🔥
 
+![image](https://github.com/user-attachments/assets/aecf48a7-e210-437f-b635-f371be780f49)
 
+![image](https://github.com/user-attachments/assets/d8b39cf3-2d05-461f-bdc1-161847c590fc)
 
+### Mapa da rede
+
+![image](https://github.com/user-attachments/assets/a96195bb-0559-4b27-9041-e02582eb791e)
+
+## Análise completa da saída Nmap em xml 
+![image](https://github.com/user-attachments/assets/f1fdbd60-ee50-4aa7-9b6f-2244d37fa5ef)
 
 
 
