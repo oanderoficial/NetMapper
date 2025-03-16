@@ -170,3 +170,14 @@ footer {display: none !important;}
 }
 ""
 ```
+
+## HTML do footer 
+
+```html
+custom_footer = """
+<div class="custom-footer">
+    Desenvolvido por Anderson Bezerra Silva | 
+    <a href="https://github.com/oanderoficial" target="_blank">GitHub</a>
+</div>
+"""
+```
