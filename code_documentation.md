@@ -140,7 +140,7 @@ def parar_escaneamento():
 
 ## Frontend
 
-```python
+```css
 estilo_css = """
 footer {display: none !important;}
 
