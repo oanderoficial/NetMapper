@@ -3,17 +3,17 @@ Varredura Nmap gráfica. Detecta sistemas operacionais, portas e serviços ativo
 
 ## Bibliotecas utilizadas no projeto
 
-<strong> Gradio </strong>: https://www.gradio.app
+<strong> 📁 Gradio </strong>: https://www.gradio.app
 <br>
-<strong> python-nmap: </strong> https://pypi.org/project/python-nmap
+<strong> 📁 python-nmap: </strong> https://pypi.org/project/python-nmap
 <br>
-<strong> networkx: </strong> https://networkx.org
+<strong> 📁 networkx: </strong> https://networkx.org
 <br> 
-<strong>matplotlib: </strong> https://matplotlib.org/
+<strong> 📁 matplotlib: </strong> https://matplotlib.org/
 <br>
-<strong> pandas: </strong> https://pandas.pydata.org
+<strong> 📁 pandas: </strong> https://pandas.pydata.org
 <br>
-<strong> Minimal DOM implementation: </strong> https://docs.python.org/pt-br/3.13/library/xml.dom.minidom.html
+<strong> 📁 Minimal DOM implementation: </strong> https://docs.python.org/pt-br/3.13/library/xml.dom.minidom.html
 
 ### Introdução do projeto
 
