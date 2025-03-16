@@ -181,3 +181,34 @@ custom_footer = """
 </div>
 """
 ```
+
+## Criar interface Gradio
+
+```python
+with gr.Blocks(css=estilo_css) as interface:
+    gr.Markdown("## 🚀 **NetMapper - Scanner Nmap Gráfico**")
+    gr.Markdown("🔍 **Varredura Nmap gráfica.** Detecta sistemas operacionais, portas e serviços ativos na rede.")
+
+    with gr.Row():
+        alvo = gr.Textbox(label="Endereço IP ou Faixa de IPs", placeholder="Ex: 192.168.1.1 ou 192.168.1.0/24")
+        portas = gr.Textbox(label="Portas (opcional)", placeholder="Ex: 22,80,443 (ou deixe em branco para scan padrão)")
+    
+    tipo_escaneamento = gr.Radio(["-sS", "-sT", "-sU", "-sV", "-A", "-sC"], label="Tipo de Escaneamento", value="-sS")
+
+    botao_escanear = gr.Button("🔍 Iniciar Escaneamento")
+    botao_parar = gr.Button("🛑 Parar Escaneamento")
+    
+    tabela_resultados = gr.Dataframe()
+    imagem_mapa = gr.Image(type="filepath", label="Mapa da Rede")
+    mensagem_status = gr.Textbox(label="Status", interactive=False)
+    saida_nmap = gr.Textbox(label="Saída Completa do Nmap", interactive=False, lines=20)
+
+    botao_escanear.click(fn=escanear_rede, inputs=[alvo, portas, tipo_escaneamento], outputs=[tabela_resultados, imagem_mapa, mensagem_status, saida_nmap])
+    botao_parar.click(fn=parar_escaneamento, inputs=[], outputs=[mensagem_status])
+
+    # Adiciona o Footer na Interface
+    gr.Markdown(custom_footer)
+
+interface.launch(share=False, show_api=False, server_name="0.0.0.0", server_port=7860)
+
+```
