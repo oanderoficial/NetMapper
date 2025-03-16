@@ -127,3 +127,13 @@ def escanear_rede(alvo, portas, tipo_escaneamento):
     except Exception as e:
         return f"❌ Erro ao escanear: {str(e)}", None, None, None
 ```
+
+## Função para interromper o scan
+
+```python
+def parar_escaneamento():
+    """Interrompe o escaneamento"""
+    global escaneamento_em_andamento
+    escaneamento_em_andamento = False
+    return "🛑 Escaneamento interrompido pelo usuário!"
+```
