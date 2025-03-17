@@ -50,7 +50,7 @@ Gerando um mapa gráfico da rede e exibindo visualmente as conexões identificad
 
 ![image](https://github.com/user-attachments/assets/a96195bb-0559-4b27-9041-e02582eb791e)
 
-## Análise completa da saída Nmap em xml 
+## Análise completa da saída Nmap em XML 
 ![image](https://github.com/user-attachments/assets/f1fdbd60-ee50-4aa7-9b6f-2244d37fa5ef)
 
 
