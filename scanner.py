@@ -176,4 +176,4 @@ with gr.Blocks(css=estilo_css) as interface:
     # Adiciona o Footer na Interface
     gr.Markdown(custom_footer)
 
-interface.launch(share=False, show_api=False, server_name="0.0.0.0", server_port=7860)
+interface.launch(share=False, show_api=False, server_name="0.0.0.0", server_port=7861)
