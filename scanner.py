@@ -16,7 +16,17 @@ if platform.system() != "Windows":
 escaneamento_em_andamento = False
 
 def formatar_saida_nmap(saida_bruta):
-    """Formata a saída XML do Nmap para exibição legível."""
+    """Formata a saída XML do Nmap para exibição legível."""#-
+    """#+
+    Formata a saída XML do Nmap para exibição legível.#+
+#+
+    Parameters:#+
+    saida_bruta (str or bytes): A saída bruta do Nmap em formato XML. Pode ser uma string ou bytes.#+
+#+
+    Returns:#+
+    str: A saída formatada do Nmap. Retorna uma string com a saída formatada se bem-sucedida.#+
+         Retorna uma string de aviso de erro se ocorrer um problema durante a formatação.#+
+    """#+
     try:
         saida_bruta = saida_bruta.decode("utf-8") if isinstance(saida_bruta, bytes) else saida_bruta
         saida_xml = xml.dom.minidom.parseString(saida_bruta)
@@ -24,6 +34,7 @@ def formatar_saida_nmap(saida_bruta):
         return saida_formatada
     except Exception:
         return "⚠️ Erro ao formatar saída do Nmap."
+
 
 def escanear_rede(alvo, portas, tipo_escaneamento):
     """Executa o scan do Nmap e retorna os resultados formatados."""
@@ -165,4 +176,4 @@ with gr.Blocks(css=estilo_css) as interface:
     # Adiciona o Footer na Interface
     gr.Markdown(custom_footer)
 
-interface.launch(share=False, show_api=False, server_name="0.0.0.0", server_port=7860)
+interface.launch(share=False, show_api=False, server_name="0.0.0.0", server_port=7861)
