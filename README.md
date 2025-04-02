@@ -53,6 +53,9 @@ Gerando um mapa gráfico da rede e exibindo visualmente as conexões identificad
 ## Análise completa da saída Nmap em XML 
 ![image](https://github.com/user-attachments/assets/f1fdbd60-ee50-4aa7-9b6f-2244d37fa5ef)
 
+## Arquitetura 
+
+![image](https://github.com/user-attachments/assets/310cbf2d-ea1e-4c00-843d-9fc5cf5ea633)
 
 
 
