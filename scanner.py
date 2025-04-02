@@ -33,7 +33,7 @@ def formatar_saida_nmap(saida_bruta):
         saida_formatada = saida_xml.toprettyxml(indent="  ")
         return saida_formatada
     except Exception:
-        return "⚠️ Erro ao formatar saída do Nmap."
+        return "Erro ao formatar saída do Nmap."
 
 
 def escanear_rede(alvo, portas, tipo_escaneamento):
@@ -42,12 +42,12 @@ def escanear_rede(alvo, portas, tipo_escaneamento):
     escaneamento_em_andamento = True
 
     if not executando_com_root and tipo_escaneamento in ["-sS", "-A"]:
-        return "⚠️ Erro: Este tipo de scan requer privilégios de root. Execute com `sudo`.", None, None, None
+        return "Erro: Este tipo de scan requer privilégios de root. Execute com `sudo`.", None, None, None
 
     try:
         scanner = nmap.PortScanner()
     except AttributeError:
-        return "❌ Erro: Biblioteca `python-nmap` não instalada corretamente!", None, None, None
+        return "Erro: Biblioteca `python-nmap` não instalada corretamente!", None, None, None
 
     try:
         # Se o usuário não informar portas, não passamos o argumento
@@ -57,14 +57,14 @@ def escanear_rede(alvo, portas, tipo_escaneamento):
             scanner.scan(alvo, arguments=tipo_escaneamento)  # Usa o scan padrão do Nmap
 
         if not scanner.all_hosts():
-            return "⚠️ Nenhum host encontrado. Verifique o IP e as configurações.", None, None, None
+            return "Nenhum host encontrado. Verifique o IP e as configurações.", None, None, None
 
         resultados = []
         mapa_rede = nx.Graph()
 
         for host in scanner.all_hosts():
             if not escaneamento_em_andamento:
-                return "⚠️ Escaneamento interrompido!", None, None, None
+                return "Escaneamento interrompido!", None, None, None
 
             sistema_operacional = scanner[host].get('osclass', [{"osfamily": "Desconhecido"}])[0].get('osfamily', "Desconhecido")
             for protocolo in scanner[host].all_protocols():
@@ -85,7 +85,7 @@ def escanear_rede(alvo, portas, tipo_escaneamento):
                     mapa_rede.add_edge(host, f"Porta {porta} ({servico})")
 
         if not resultados:
-            return "⚠️ Nenhum resultado encontrado. O scan pode ter sido bloqueado pelo firewall.", None, None, None
+            return "Nenhum resultado encontrado. O scan pode ter sido bloqueado pelo firewall.", None, None, None
 
         df_resultados = pd.DataFrame(resultados)
 
@@ -104,13 +104,13 @@ def escanear_rede(alvo, portas, tipo_escaneamento):
         return df_resultados, caminho_imagem, "✅ Escaneamento concluído!", saida_formatada
 
     except Exception as e:
-        return f"❌ Erro ao escanear: {str(e)}", None, None, None
+        return f"Erro ao escanear: {str(e)}", None, None, None
 
 def parar_escaneamento():
     """Interrompe o escaneamento"""
     global escaneamento_em_andamento
     escaneamento_em_andamento = False
-    return "🛑 Escaneamento interrompido pelo usuário!"
+    return "Escaneamento interrompido pelo usuário!"
 
 #frontend
 estilo_css = """
@@ -162,8 +162,8 @@ with gr.Blocks(css=estilo_css) as interface:
     
     tipo_escaneamento = gr.Radio(["-sS", "-sT", "-sU", "-sV", "-A", "-sC"], label="Tipo de Escaneamento", value="-sS")
 
-    botao_escanear = gr.Button("🔍 Iniciar Escaneamento")
-    botao_parar = gr.Button("🛑 Parar Escaneamento")
+    botao_escanear = gr.Button("Iniciar Escaneamento")
+    botao_parar = gr.Button("Parar Escaneamento")
     
     tabela_resultados = gr.Dataframe()
     imagem_mapa = gr.Image(type="filepath", label="Mapa da Rede")
