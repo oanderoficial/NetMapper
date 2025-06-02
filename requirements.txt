@@ -1,0 +1,6 @@
+gradio
+python-nmap
+pandas
+networkx
+matplotlib
+
