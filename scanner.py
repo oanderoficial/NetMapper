@@ -80,7 +80,7 @@ def escanear_rede(alvo, portas, tipo_escaneamento):
                         "Serviço": servico,
                         "Estado": estado
                     })
-
+    
                     mapa_rede.add_node(host)
                     mapa_rede.add_edge(host, f"Porta {porta} ({servico})")
 
@@ -161,7 +161,6 @@ with gr.Blocks(css=estilo_css) as interface:
         portas = gr.Textbox(label="Portas (opcional)", placeholder="Ex: 22,80,443 (ou deixe em branco para scan padrão)")
     
     tipo_escaneamento = gr.Radio(["-sS", "-sT", "-sU", "-sV", "-A", "-sC"], label="Tipo de Escaneamento", value="-sS")
-
     botao_escanear = gr.Button("Iniciar Escaneamento")
     botao_parar = gr.Button("Parar Escaneamento")
     
@@ -172,7 +171,6 @@ with gr.Blocks(css=estilo_css) as interface:
 
     botao_escanear.click(fn=escanear_rede, inputs=[alvo, portas, tipo_escaneamento], outputs=[tabela_resultados, imagem_mapa, mensagem_status, saida_nmap])
     botao_parar.click(fn=parar_escaneamento, inputs=[], outputs=[mensagem_status])
-
     # Adiciona o Footer na Interface
     gr.Markdown(custom_footer)
 
